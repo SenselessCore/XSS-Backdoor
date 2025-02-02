@@ -7,7 +7,7 @@ XSS-BACKDOOR is a Flask-based web server that uses `ngrok` to expose a local ser
 - Uses `Flask` to handle web requests.
 - Uses `ngrok` to make the server accessible online.
 - Parses user-agent data to identify device type, operating system, and browser.
-- Captures and logs client IP address and cookies.
+- Captures and logs domain name and cookies.
 - Injects a JavaScript payload to capture cookies from visitors.
 - Displays information in a formatted and colorized console output.
 
