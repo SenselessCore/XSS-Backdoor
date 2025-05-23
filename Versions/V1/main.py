@@ -4,7 +4,7 @@ from colorama import init, Fore
 from datetime import datetime
 import user_agents
 import os
-os.system("ngrok config add-authtoken 2EcFi3NgdSCjz541gmD1ChlnGOr_6wiepJMBeBSVCGoRkm5Lf  || ./ngrok config add-authtoken 2EcFi3NgdSCjz541gmD1ChlnGOr_6wiepJMBeBSVCGoRkm5Lf ")
+os.system("ngrok config add-authtoken (Your Ngrok Token)  || ./ngrok config add-authtoken (Your Ngrok Token) ")
 init()
 print(f"[{Fore.MAGENTA}TRAP-BACKDOOR{Fore.RESET}]")
 app = Flask(__name__)
