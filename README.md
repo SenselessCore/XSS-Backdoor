@@ -44,5 +44,5 @@ pip install flask pyngrok colorama user-agents
 This project is for educational purposes only. Unauthorized use of this software to collect sensitive information without consent is illegal and unethical. The author is not responsible for any misuse of this tool.
 
 ## License
-MIT License. See [LICENSE](LICENSE) for more details.
+GNU GPL v3 License. See [LICENSE](LICENSE) for more details.
 
