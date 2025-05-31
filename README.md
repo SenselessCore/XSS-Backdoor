@@ -22,7 +22,7 @@ pip install flask pyngrok colorama user-agents
 1. Clone this repository:
    ```bash
    git clone https://github.com/SenselessCore/XSS-Backdoor.git
-   cd trap-backdoor
+   cd XSS-Backdoor
    ```
 2. Install dependencies:
    ```bash
