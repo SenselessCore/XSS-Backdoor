@@ -7,16 +7,16 @@ import user_agents
 import os
 import re
 
-os.system("ngrok config add-authtoken 2EcFi3NgdSCjz541gmD1ChlnGOr_6wiepJMBeBSVCGoRkm5Lf  || ./ngrok config add-authtoken 2EcFi3NgdSCjz541gmD1ChlnGOr_6wiepJMBeBSVCGoRkm5Lf ")
+os.system("ngrok config add-authtoken (Your Ngrok Token)  || ./ngrok config add-authtoken (Your Ngrok Token) ")
 init()
 
 # id, token type
-wh = Webhook(id="1389642689057919206", token="lq0EcP-atEkwqYizKAM2RK2EqKYQypMATdUKXbPfX8geKvXlWPv0Fsj5_7hj5N47HikI")
+wh = Webhook(id="(Your Webhook Id)", token="(Your Webhook Token)")
 
 # or
 
 # URL type
-#url = "https://discord.com/api/webhooks/1389642689057919206/lq0EcP-atEkwqYizKAM2RK2EqKYQypMATdUKXbPfX8geKvXlWPv0Fsj5_7hj5N47HikI"
+#url = "https://discord.com/api/webhooks/(Your Webhook Id)/(Your Webhook Token)"
 #wh = Webhook(url=url)
 
 
